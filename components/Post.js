@@ -1,5 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import Image from 'next/image'
+import CategoryLabel from './CategoryLabel'
 
 export default function Post({ post }) {
   return (
@@ -16,7 +18,7 @@ export default function Post({ post }) {
         <span className='font-light text-gray-600'>
           {post.frontmatter.date}
         </span>
-        <div>{post.frontmatter.category}</div>
+        <CategoryLabel>{post.frontmatter.category}</CategoryLabel>
       </div>
 
       <div className='mt-2'>
@@ -33,7 +35,7 @@ export default function Post({ post }) {
           <a className='text-gray-900 hover:text-blue-600'>Read More</a>
         </Link>
         <div className='flex items-center'>
-          <Image
+          <img
             src={post.frontmatter.author_image}
             alt=''
             className='mx-4 w-10 h-10 object-cover rounded-full hidden sm:block'
